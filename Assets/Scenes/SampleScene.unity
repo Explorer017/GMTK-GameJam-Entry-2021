@@ -1175,8 +1175,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   comprimised: 0
   light: {fileID: 1056146109}
-  transform: {fileID: 1981976755}
   playerTransform: {fileID: 740655635}
+  player: {x: 0, y: 0, z: 0}
+  animator: {fileID: 0}
 --- !u!1 &2101158006
 GameObject:
   m_ObjectHideFlags: 0
