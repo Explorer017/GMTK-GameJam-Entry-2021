@@ -22,6 +22,6 @@ public class NPCCollecting : MonoBehaviour
         comprimised = true;
         transform.SetParent(playerTransform);
         animator.SetBool("attached", true);
-        transform.position = new Vector2(playerTransform.position.x,playerTransform.position.y+(0.8f*(playerTransform.childCount-2)));
+        transform.position = new Vector2(playerTransform.position.x,playerTransform.position.y+(0.7f*(playerTransform.childCount-2)));
     }
 }
