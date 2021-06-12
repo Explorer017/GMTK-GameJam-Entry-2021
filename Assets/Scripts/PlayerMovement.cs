@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, rb.velocity.y);
     }
-    void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("Entered");
         if (collision.gameObject.CompareTag("ground"))
@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void OnCollisionExit(Collision collision)
+    void OnCollisionExit2D(Collision2D collision)
     {
         Debug.Log("Exited");
         if (collision.gameObject.CompareTag("ground"))
@@ -35,4 +35,3 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 }
-
