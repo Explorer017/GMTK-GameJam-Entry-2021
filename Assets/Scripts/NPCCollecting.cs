@@ -21,8 +21,7 @@ public class NPCCollecting : MonoBehaviour
         Debug.Log("Steve has been comprimised");
         comprimised = true;
         transform.SetParent(playerTransform);
+        animator.SetBool("attached", true);
         transform.position = new Vector2(playerTransform.position.x,playerTransform.position.y+(0.8f*(playerTransform.childCount-2)));
-        //transform.position = new Vector2(0, (float)0.8);
-        //transform.position = new Vector3(0, (float)0.8, 0);
     }
 }
