@@ -5,8 +5,15 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     public float jumpspeed;
     private Rigidbody2D rb;
-    public Vector2 movement;
     public bool isGrounded;
+    public Transform groundCheck;
+    public float checkRadius;
+    public LayerMask whatIsGround;
+    [SerializeField]
+    private int extraJumps;
+    public int extraJumpsValue;
+    public bool jumpHeld;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,23 +22,32 @@ public class PlayerMovement : MonoBehaviour
     }
     void FixedUpdate()
     {
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
         rb.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, rb.velocity.y);
     }
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        Debug.Log("Entered");
-        if (collision.gameObject.CompareTag("ground"))
-        {
-            isGrounded = true;
-        }
-    }
 
-    void OnCollisionExit2D(Collision2D collision)
-    {
-        Debug.Log("Exited");
-        if (collision.gameObject.CompareTag("ground"))
+    void Update(){
+        if(isGrounded){
+            extraJumps = extraJumpsValue;
+        }
+        if((Input.GetAxis("Jump") == 1)  && (extraJumps > 0)){
+            if (jumpHeld == false)
+            {
+                rb.velocity = Vector2.up * jumpspeed;
+                extraJumps--;
+            }
+            jumpHeld = true;
+        } else if ((Input.GetAxis("Jump") == 1) && (extraJumps == 0) && isGrounded) {
+            if (jumpHeld == false)
+            {
+                rb.velocity = Vector2.up * jumpspeed;
+            }
+            jumpHeld = true;
+        }
+        else
         {
-            isGrounded = false;
+            jumpHeld = false;
         }
     }
 }
+
