@@ -5,6 +5,7 @@ public class AppearingGround : MonoBehaviour
     public GameObject player;
     private Renderer renderer;
     private BoxCollider2D box;
+    public int playersRequired;
     public bool unlocked = false;
     private void Start()
     {
@@ -15,7 +16,7 @@ public class AppearingGround : MonoBehaviour
     }
     private void Update()
     {
-        if (player.transform.childCount > 3 && !unlocked)
+        if (player.transform.childCount > playersRequired && !unlocked)
         {
             renderer.enabled = true;
             box.enabled = true;
