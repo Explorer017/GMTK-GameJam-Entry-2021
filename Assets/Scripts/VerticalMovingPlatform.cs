@@ -1,11 +1,11 @@
 using UnityEngine;
 
-public class MovingPlatform : MonoBehaviour
+public class VerticalMovingPlatform : MonoBehaviour
 {
     private float useSpeed;
-    public float directionSpeed = 5.0f;
+    public float directionSpeed;
     float origY;
-    public float distance = 10.0f;
+    public float distance;
 
     // Use this for initialization
     void Start()
@@ -19,12 +19,20 @@ public class MovingPlatform : MonoBehaviour
     {
         if (origY - transform.position.y > distance)
         {
-            useSpeed = directionSpeed; //flip direction
+            useSpeed = directionSpeed;
         }
         else if (origY - transform.position.y < -distance)
         {
-            useSpeed = -directionSpeed; //flip direction
+            useSpeed = -directionSpeed;
         }
         transform.Translate(0, useSpeed * Time.deltaTime, 0);
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        other.transform.parent = this.transform;
+    }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        other.transform.parent = null;
     }
 }
