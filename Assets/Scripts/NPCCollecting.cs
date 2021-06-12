@@ -20,13 +20,8 @@ public class NPCCollecting : MonoBehaviour
         Object.Destroy(GetComponent<BoxCollider2D>());
         Debug.Log("Steve has been comprimised");
         comprimised = true;
-        player = GameObject.Find("player").transform.position;
         transform.SetParent(playerTransform);
-        transform.position = new Vector2(player.x,(player.y+1)-0.1f);
-        Debug.Log("STEVEN IS BECOMING ATTACHED");
         animator.SetBool("attached", true);
-        Debug.Log("STEVE HAS BEEN STEVED");
-        //transform.position = new Vector2(0, (float)0.8);
-        //transform.position = new Vector3(0, (float)0.8, 0);
+        transform.position = new Vector2(playerTransform.position.x,playerTransform.position.y+(0.8f*(playerTransform.childCount-2)));
     }
 }
