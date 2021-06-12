@@ -29,10 +29,16 @@ public class VerticalMovingPlatform : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        other.transform.parent = this.transform;
+        if (other.gameObject.name == "player")
+        {
+            other.transform.parent = this.transform;
+        }
     }
     private void OnTriggerExit2D(Collider2D other)
     {
-        other.transform.parent = null;
+        if (other.gameObject.name == "player")
+        {
+            other.transform.parent = null;
+        }
     }
 }
