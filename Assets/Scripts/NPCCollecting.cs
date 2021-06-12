@@ -23,6 +23,9 @@ public class NPCCollecting : MonoBehaviour
         player = GameObject.Find("player").transform.position;
         transform.SetParent(playerTransform);
         transform.position = new Vector2(player.x,(player.y+1)-0.1f);
+        Debug.Log("STEVEN IS BECOMING ATTACHED");
+        animator.SetBool("attached", true);
+        Debug.Log("STEVE HAS BEEN STEVED");
         //transform.position = new Vector2(0, (float)0.8);
         //transform.position = new Vector3(0, (float)0.8, 0);
     }
