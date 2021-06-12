@@ -116,6 +116,9 @@ TextureImporter:
   - first:
       213: 6447691640109403081
     second: stone_37
+  - first:
+      213: 3855549885320058086
+    second: stone_38
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -506,27 +509,6 @@ TextureImporter:
       bones: []
       spriteID: a458ea183b87d9360800000000000000
       internalID: 7178026093468616010
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: stone_14
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bf20253f0c5bee470800000000000000
-      internalID: 8425871793177363195
       vertices: []
       indices: 
       edges: []
@@ -1010,6 +992,27 @@ TextureImporter:
       bones: []
       spriteID: 9cb0af5a26dca7950800000000000000
       internalID: 6447691640109403081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stone_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf20253f0c5bee470800000000000000
+      internalID: 8425871793177363195
       vertices: []
       indices: 
       edges: []
