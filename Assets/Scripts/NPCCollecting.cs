@@ -9,6 +9,7 @@ public class NPCCollecting : MonoBehaviour
     public Transform playerTransform;
     public Vector3 player;
     public Animator animator;
+    public BoxCollider2D box;
 
     private void Start()
     {
@@ -23,5 +24,8 @@ public class NPCCollecting : MonoBehaviour
         transform.SetParent(playerTransform);
         animator.SetBool("attached", true);
         transform.position = new Vector2(playerTransform.position.x,playerTransform.position.y+(0.7f*(playerTransform.childCount-2)));
+        box.size = new Vector2(box.size.x, box.size.y + 0.7f);
+        box.offset = new Vector2(box.offset.x, box.offset.y + 0.35f);
+
     }
 }
