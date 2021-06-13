@@ -3,9 +3,15 @@ using UnityEngine;
 
 public class FinishLevel : MonoBehaviour
 {
+    public GameObject endscreen;
+    public GameObject playermovement;
+    private void Start()
+    {
+        endscreen.SetActive(false);
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //Maybe Create Well done screen
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        endscreen.SetActive(true);
+        playermovement.GetComponent<PlayerMovement>().enabled = false;
     }
 }
