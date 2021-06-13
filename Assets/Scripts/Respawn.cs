@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 
 public class Respawn : MonoBehaviour
 {
@@ -14,8 +15,13 @@ public class Respawn : MonoBehaviour
     {
         if (coll.gameObject.name == "player")
         {
-            audio.Play();
-            coll.transform.position = respawnLocation;
+            if (coll.gameObject.transform.childCount > 2) {
+                audio.Play();
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            } else {
+                coll.transform.position = respawnLocation;
+                audio.Play();
+            }
         }
     }
 }
