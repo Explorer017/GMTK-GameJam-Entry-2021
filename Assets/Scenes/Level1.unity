@@ -593,7 +593,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af0948d503e56274298b36c67c2c133f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  directionSpeed: 1
+  directionSpeed: 2
   distance: 5
 --- !u!66 &311026560
 CompositeCollider2D:
