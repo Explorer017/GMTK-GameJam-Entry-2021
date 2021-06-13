@@ -35,5 +35,9 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("SpeedHorizontal", Input.GetAxis("Horizontal") * speed);
         animator.SetFloat("SpeedVertical", rb.velocity.y);
     }
+    private void OnDisable()
+    {
+        rb.velocity = Vector3.zero;
+    }
 }
 
