@@ -10,9 +10,11 @@ public class NPCCollecting : MonoBehaviour
     public Vector3 player;
     public Animator animator;
     public BoxCollider2D box;
+    private AudioSource audio;
 
     private void Start()
     {
+        audio = GetComponent<AudioSource>();
         transform = GetComponent<Transform>();
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -21,6 +23,7 @@ public class NPCCollecting : MonoBehaviour
         Object.Destroy(GetComponent<BoxCollider2D>());
         Debug.Log("Steve has been comprimised");
         comprimised = true;
+        audio.Play();
         transform.SetParent(playerTransform);
         animator.SetBool("attached", true);
         transform.position = new Vector2(playerTransform.position.x,playerTransform.position.y+(0.7f*(playerTransform.childCount-2)));
