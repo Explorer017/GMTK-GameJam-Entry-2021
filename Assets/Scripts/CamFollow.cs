@@ -3,9 +3,12 @@
 public class CamFollow : MonoBehaviour
 {
     public Transform playerTransform;
-    public float upperBound;
-    public float lowerBound;
-    public float leftBound;
-    public float rightBound;
-    private void LateUpdate() {transform.position = new Vector3(Mathf.Clamp(playerTransform.position.x, leftBound, rightBound),Mathf.Clamp(playerTransform.position.y, lowerBound, upperBound), transform.position.z);}
+    public Transform boundsTransform;
+    private void LateUpdate() {
+        transform.position = new Vector3(
+            Mathf.Clamp(playerTransform.position.x, boundsTransform.position.x - (boundsTransform.localScale.x / 2 ), boundsTransform.position.x + (boundsTransform.localScale.x / 2)), 
+            Mathf.Clamp(playerTransform.position.y, boundsTransform.position.y - boundsTransform.localScale.y - (boundsTransform.localScale.y / 2), boundsTransform.position.y + (boundsTransform.localScale.y / 2)), 
+            transform.position.z
+        );
+    }
 }
