@@ -24796,7 +24796,7 @@ GameObject:
   - component: {fileID: 2071170226}
   - component: {fileID: 2071170225}
   - component: {fileID: 2071170224}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: magicPlatform1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
